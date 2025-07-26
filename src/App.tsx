@@ -1,5 +1,4 @@
 import "./App.css";
-import "aos/dist/aos.css";
 
 import { FileUser, Github, Linkedin, Mail } from "lucide-react";
 
