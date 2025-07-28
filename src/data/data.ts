@@ -5,6 +5,8 @@ export const APP_DATA = {
       "https://firebasestorage.googleapis.com/v0/b/firestore-project-6ae19.appspot.com/o/full-resume.png?alt=media&token=031a8c1f-c7d2-49a2-bf2b-ed67a296ff3f",
     summary: "I am a front-end developer with 3 years of experience.",
     role: "",
+    email: "khai.fordev@gmail.com",
+    phone: "0945757051",
   },
   skills: {},
   projects: [
@@ -25,4 +27,9 @@ export const APP_DATA = {
         "https://firebasestorage.googleapis.com/v0/b/firestore-project-6ae19.appspot.com/o/2025-07-26_15-26-19.png?alt=media&token=3467767b-b29f-4a7a-ae73-827cb4af8c7e",
     },
   ],
+  emailServiceConfig: {
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    userId: import.meta.env.VITE_EMAILJS_USER_ID,
+  },
 };

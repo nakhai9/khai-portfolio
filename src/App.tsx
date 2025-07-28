@@ -1,7 +1,9 @@
 import "./App.css";
 
 import { FileUser, Github, Linkedin, Mail } from "lucide-react";
+import { ToastContainer } from "react-toastify";
 
+import ContactMe from "./components/ContactMe";
 import Experiences from "./components/Experiences";
 import SideProjects from "./components/SideProjects";
 import Skills from "./components/Skills";
@@ -85,12 +87,13 @@ function App() {
         <Skills />
         <Experiences />
         <SideProjects projects={APP_DATA.projects} />
-        {/* <ContactMe /> */}
+        <ContactMe />
 
         <div className="flex items-center mt-10 border-slate-600 border-t h-12 text-xs">
           <p>&copy; {APP_DATA.me.name} 2025</p>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
