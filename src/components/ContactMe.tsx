@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import { useState } from "react";
+import { useState } from 'react';
 
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
-import emailjs from "@emailjs/browser";
+import emailjs from '@emailjs/browser';
 
-import { APP_DATA } from "../data/data";
-import { isEmail } from "../utils/common";
-import Section from "./ui/Section";
+import { APP_DATA } from '../data/data';
+import { isEmail } from '../utils/common';
+import Section from './ui/Section';
 
 type ContactMeProps = {
   //   TODO
