@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import { useState } from 'react';
 
+import {
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+} from 'lucide-react';
 import { toast } from 'react-toastify';
 
 import emailjs from '@emailjs/browser';
@@ -88,51 +94,69 @@ const ContactMe: React.FC<ContactMeProps> = () => {
   return (
     <>
       <Section title="Contact Me">
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="" className="block mb-1 font-bold">
-              Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              className="bg-white p-2 focus:border-amber-500 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 w-full text-slate-500"
-              onChange={handleChange}
-            />
+        <div className="flex">
+          <div className="min-w-60">
+            <ul>
+              <li className="flex items-center gap-4 mb-3">
+                <MapPin /> {APP_DATA.me.address}
+              </li>
+              <li className="flex items-center gap-4 mb-3">
+                <Mail /> {APP_DATA.me.email}
+              </li>
+              <li className="flex items-center gap-4 mb-3">
+                <Phone /> {APP_DATA.me.phone}
+              </li>
+              <li className="flex items-center gap-4 mb-3">
+                <Linkedin /> <a href={APP_DATA.me.linkedin}>nakhai9</a>
+              </li>
+            </ul>
           </div>
-          <div>
-            <label htmlFor="" className="block mb-1 font-bold">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              className="bg-white p-2 focus:border-amber-500 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 w-full text-slate-500"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="" className="block mb-1 font-bold">
-              Message <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              className="bg-white p-2 focus:border-amber-500 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 w-full text-slate-500"
-              onChange={handleChange}
-            ></textarea>
-          </div>
-          <div className="flex justify-center items-center">
-            <button
-              type="submit"
-              className="flex justify-center items-center gap-2 bg-amber-500 hover:bg-amber-400 px-3 py-2 rounded-md font-bold hover:text-amber-600 cursor-pointer"
-            >
-              <span>SEND ME YOUR MESSAGE</span>
-            </button>
-          </div>
-        </form>
+          <form className="flex flex-col flex-1 gap-4" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="" className="block mb-1 font-bold">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                className="bg-white p-2 focus:border-amber-500 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 w-full text-slate-500"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="" className="block mb-1 font-bold">
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="email"
+                value={formData.email}
+                className="bg-white p-2 focus:border-amber-500 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 w-full text-slate-500"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="" className="block mb-1 font-bold">
+                Message <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                className="bg-white p-2 focus:border-amber-500 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 w-full text-slate-500"
+                onChange={handleChange}
+              ></textarea>
+            </div>
+            <div className="flex justify-center items-center">
+              <button
+                type="submit"
+                className="flex justify-center items-center gap-2 bg-amber-500 hover:bg-amber-400 px-3 py-2 rounded-md font-bold hover:text-amber-600 cursor-pointer"
+              >
+                <span>SEND ME YOUR MESSAGE</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </Section>
     </>
   );

@@ -1,6 +1,8 @@
 import "./App.css";
 
-import { FileUser, Github, Linkedin, Mail } from "lucide-react";
+import { useRef } from "react";
+
+import { FileUser } from "lucide-react";
 import { ToastContainer } from "react-toastify";
 
 import ContactMe from "./components/ContactMe";
@@ -10,50 +12,64 @@ import Skills from "./components/Skills";
 import { APP_DATA } from "./data/data";
 
 type AppBarProps = {
+  onMenuClick?: (section: string) => void;
   redirectCb?: (url: string) => void;
 };
 
-const AppBar = ({ redirectCb }: AppBarProps) => (
+const AppBar = ({ onMenuClick }: AppBarProps) => (
   <div className="top-0 left-0 z-10 fixed flex justify-between items-center bg-[#0a0119] shadow-lg px-4 border-slate-600 border-b w-full h-12">
     <button type="button" className="text-amber-600 text-2xl">
       {APP_DATA.me.name}
     </button>
     <div className="flex justify-between items-center gap-2">
       <button
-        type="button"
-        className="hover:text-amber-600 cursor-pointer"
-        onClick={() => redirectCb && redirectCb("https://github.com/nakhai9")}
+        className="px-2 py-1 text-white hover:text-amber-500 cursor-pointer"
+        onClick={() => onMenuClick?.("home")}
       >
-        <Github />
+        Home
       </button>
       <button
-        type="button"
-        className="hover:text-amber-600 cursor-pointer"
-        onClick={() =>
-          redirectCb && redirectCb("https://www.linkedin.com/in/nakhai9/")
-        }
+        className="px-2 py-1 text-white hover:text-amber-500 cursor-pointer"
+        onClick={() => onMenuClick?.("skills")}
       >
-        <Linkedin />
+        Skills
       </button>
-      <button type="button" className="hover:text-amber-600 cursor-pointer">
-        <Mail />
+      <button
+        className="px-2 py-1 text-white hover:text-amber-500 cursor-pointer"
+        onClick={() => onMenuClick?.("projects")}
+      >
+        Projects
       </button>
     </div>
   </div>
 );
 
 function App() {
-  const navigateByUrl = (url: string) => {
-    if (url.startsWith("http")) {
-      window.open(url, "_blank");
+  const homeRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+
+  const handleMenuClick = (section: string) => {
+    if (section === "home") {
+      homeRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    if (section === "skills") {
+      skillsRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    if (section === "contact") {
+      contactRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    if (section === "projects") {
+      projectsRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div className="relative w-full">
-      <AppBar redirectCb={navigateByUrl} />
+      <AppBar onMenuClick={handleMenuClick} />
       <div className="relative mx-auto p-4 sm:p-0 md:p-0 max-w-5xl">
-        <div className="flex items-center pt-56">
+        <div ref={homeRef} className="flex items-center pt-56">
           <div className="flex sm:flex-row md:flex-row flex-col justify-center items-center gap-10">
             <div className="shadow-md rounded-full w-52 h-52 overflow-hidden">
               <img
@@ -74,26 +90,38 @@ function App() {
                 {APP_DATA.me.summary}
               </p>
 
-              <div>
+              <div className="flex gap-4">
                 <button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 px-3 py-2 rounded-xl font-bold hover:text-amber-600 cursor-pointer">
                   <FileUser />
                   <span>DOWNLOAD CV</span>
+                </button>
+                <button
+                  className="flex items-center gap-2 bg-translate hover:bg-slate-100/30 px-3 py-2 border border-white rounded-xl font-bold cursor-pointer"
+                  onClick={() => handleMenuClick("contact")}
+                >
+                  <span>GET IN TOUCH</span>
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        <Skills />
+        <div ref={skillsRef}>
+          <Skills />
+        </div>
         <Experiences />
-        <SideProjects projects={APP_DATA.projects} />
-        <ContactMe />
+        <div ref={projectsRef}>
+          <SideProjects projects={APP_DATA.projects} />
+        </div>
+        <div ref={contactRef}>
+          <ContactMe />
+        </div>
 
         <div className="flex items-center mt-10 border-slate-600 border-t h-12 text-xs">
           <p>&copy; {APP_DATA.me.name} 2025</p>
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer hideProgressBar={true} />
     </div>
   );
 }
