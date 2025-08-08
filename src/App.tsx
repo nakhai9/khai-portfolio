@@ -1,15 +1,16 @@
-import "./App.css";
+import './App.css';
 
-import { useRef } from "react";
+import { useRef } from 'react';
 
-import { FileUser } from "lucide-react";
-import { ToastContainer } from "react-toastify";
+import { FileUser } from 'lucide-react';
+import { ToastContainer } from 'react-toastify';
 
-import ContactMe from "./components/ContactMe";
-import Experiences from "./components/Experiences";
-import SideProjects from "./components/SideProjects";
-import Skills from "./components/Skills";
-import { APP_DATA } from "./data/data";
+import ContactMe from './components/ContactMe';
+import Experiences from './components/Experiences';
+import SideProjects from './components/SideProjects';
+import Skills from './components/Skills';
+import { APP_DATA } from './data/data';
+import { downloadResumeFile } from './utils/common';
 
 type AppBarProps = {
   onMenuClick?: (section: string) => void;
@@ -91,7 +92,11 @@ function App() {
               </p>
 
               <div className="flex gap-4">
-                <button className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 px-3 py-2 rounded-xl font-bold hover:text-amber-600 cursor-pointer">
+                <button
+                  onClick={() => downloadResumeFile("/KhaiNguyen.pdf")}
+                  type="button"
+                  className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 px-3 py-2 rounded-xl font-bold hover:text-amber-600 cursor-pointer"
+                >
                   <FileUser />
                   <span>DOWNLOAD CV</span>
                 </button>
