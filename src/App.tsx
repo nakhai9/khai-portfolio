@@ -10,13 +10,13 @@ import {
   SideProjects,
   Skills,
 } from "./components";
-import { Footer } from "./components/ui";
+import { AppBar, Footer } from "./components/ui";
 import { APP_DATA } from "./data/data";
 
 function App() {
   return (
     <div className="relative px-6 w-full">
-      {/* <AppBar navLinks={APP_DATA.navLinks} /> */}
+      <AppBar navLinks={APP_DATA.navLinks} />
       <div className="relative">
         <Intro />
         <div className="flex flex-col gap-20">

@@ -10,7 +10,7 @@ const AboutMe: FC<AboutMeProps> = () => {
       <h2 className="font-semibold text-amber-500 text-4xl text-center">
         About Me
       </h2>
-      <div className="flex justify-center items-center gap-10 mt-10">
+      <div className="flex md:flex-row flex-col justify-center items-center gap-10 mt-10">
         <div className="shadow-amber-500 shadow-lg p-2 border-1 border-amber-500 rounded w-60 h-60 overflow-hidden">
           <img
             src={APP_DATA.me.avatar}
