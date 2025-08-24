@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import Section from "./ui/Section";
+import Section from './ui/Section';
 
 {
   /* https://www.figma.com/community/file/1161721251517347938 */
@@ -9,7 +9,7 @@ type SkillsProps = {};
 
 const Skills: React.FC<SkillsProps> = () => {
   return (
-    <Section title="Skills">
+    <Section title="Technical Skills">
       <div className="gap-4 grid sm:grid-cols-3">
         <div>
           <h3 className="mb-4 font-bold text-xl text-center">Languages</h3>

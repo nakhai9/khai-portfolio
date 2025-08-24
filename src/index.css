@@ -3,9 +3,14 @@
 body {
   background-color: var(--background-primary);
   color: var(--text-primary);
+  font-family: "DM Sans";
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 :root {
   --background-primary: #0a0119;
   --text-primary: #e2e8f0;
+  --font-primary: "DM Sans";
+  --color-primary: #fe9a00;
 }

@@ -5,13 +5,39 @@ export const APP_DATA = {
       "https://firebasestorage.googleapis.com/v0/b/firestore-project-6ae19.appspot.com/o/full-resume.png?alt=media&token=031a8c1f-c7d2-49a2-bf2b-ed67a296ff3f",
     summary:
       "With 3 years of hands-on experience as a front-end developer, I specialize in building clean, intuitive, and scalable interfaces that drive user engagement. I take pride in transforming complex requirements into seamless digital experiences.",
-    role: "",
+    role: "Frontend Developer",
     email: "khai.fordev@gmail.com",
     phone: "0945757051",
     address: "Can Tho City, Vietnam",
     linkedin: "https://www.linkedin.com/in/nakhai9/",
     github: "https://github.com/nakhai9",
   },
+  navLinks: [
+    {
+      id: "home",
+      title: "Home",
+    },
+    {
+      id: "about",
+      title: "About",
+    },
+    // {
+    //   id: "education",
+    //   title: "Education",
+    // },
+    // {
+    //   id: "skills",
+    //   title: "Skills",
+    // },
+    // {
+    //   id: "projects",
+    //   title: "Projects",
+    // },
+    // {
+    //   id: "contact",
+    //   title: "Contact Me",
+    // },
+  ],
   skills: {},
   projects: [
     {
