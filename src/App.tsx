@@ -19,7 +19,7 @@ function App() {
       <AppBar navLinks={APP_DATA.navLinks} />
       <div className="relative">
         <Intro />
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-10">
           <AboutMe />
           <Skills />
           <Experiences />
