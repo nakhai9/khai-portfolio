@@ -41,6 +41,15 @@ export const APP_DATA = {
   skills: {},
   projects: [
     {
+      name: "QR Code Generate",
+      technologies: ["React.js", "TypeScript", "Tailwind CSS"],
+      description:
+        "A web application that allows users to generate QR codes for URLs, text, and other data types.",
+      imageUrl:
+        "https://firebasestorage.googleapis.com/v0/b/firestore-project-6ae19.appspot.com/o/2025-09-03_23-20-40.png?alt=media&token=975d28be-3816-4285-8b2e-678e9875935f",
+      launchUrl: "https://qr-code-generate-chi.vercel.app/",
+    },
+    {
       name: "Portfolio",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
       description:
