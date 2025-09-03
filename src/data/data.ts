@@ -12,7 +12,7 @@ export const APP_DATA = {
     linkedin: "https://www.linkedin.com/in/nakhai9/",
     github: "https://github.com/nakhai9",
     description:
-      "I love coding and constantly explore best practices in my field to make my code more efficient and reliable. What excites me the most is building products that not only perform well but also bring a safe and enjoyable experience to users. Outside of work, I often find myself immersed in books or audio about history and culture, which broadens my perspective of the world. I also enjoy relaxing with friends through gaming, and I write blogs as a way to reflect and improve myself day by day.",
+      "I love coding and constantly explore best practices in my field to make my code more efficient and reliable. What excites me the most is building products that not only perform well but also bring a safe and enjoyable experience to users.",
   },
   navLinks: [
     {
