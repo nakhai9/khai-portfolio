@@ -1,8 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+} from 'lucide-react';
 
-import { APP_DATA } from "../../data/data";
+import { APP_DATA } from '../../data/data';
 
 type NavLink = {
   id: string;
@@ -22,7 +25,6 @@ const AppBar: React.FC<AppBarProps> = ({ navLinks, onMenuClick }) => {
   };
   React.useEffect(() => {
     const handleResize = () => {
-      // Nếu màn hình >= md (768px) thì tự động đóng menu
       if (window.innerWidth >= 768 && isMenuOpen) {
         setIsMenuOpen(false);
       }

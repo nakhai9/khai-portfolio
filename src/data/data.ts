@@ -11,6 +11,8 @@ export const APP_DATA = {
     address: "Can Tho City, Vietnam",
     linkedin: "https://www.linkedin.com/in/nakhai9/",
     github: "https://github.com/nakhai9",
+    description:
+      "I love coding and constantly explore best practices in my field to make my code more efficient and reliable. What excites me the most is building products that not only perform well but also bring a safe and enjoyable experience to users. Outside of work, I often find myself immersed in books or audio about history and culture, which broadens my perspective of the world. I also enjoy relaxing with friends through gaming, and I write blogs as a way to reflect and improve myself day by day.",
   },
   navLinks: [
     {
@@ -73,4 +75,26 @@ export const APP_DATA = {
     templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
     userId: import.meta.env.VITE_EMAILJS_USER_ID,
   },
+  experiences: [
+    {
+      companyName: "Simplify Dalat - Can Tho Campus",
+      role: "Software Developer",
+      from: "August 2022",
+      to: "present",
+      duties: [
+        "Developed and maintained responsive, user-friendly Uis based on client requirements.",
+        "Migrated legacy UI use standalone component to improve performance.",
+        "Identified and removed redundant code, boosting app performance.",
+        "Wrote automation tests using Selenium Webdriver.",
+        "Worked directly with client to build and implement new features.",
+        "Maintained system and upgraded new UIs based on the design.",
+        "Wrote user guide for the end customer.",
+        "Integrated social login feature with Facebook and Google.",
+        "Worked in an Agile Scrum team environment.",
+        "Developed and maintained basic backend APIs to support frontend team.",
+        "Took initiative to fix minor backend issues during frontend tasks.",
+      ],
+      technologies: ["angular", "tailwind", "bootstrap", "typescript"],
+    },
+  ],
 };
