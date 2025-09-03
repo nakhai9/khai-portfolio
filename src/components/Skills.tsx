@@ -7,11 +7,47 @@ import Section from './ui/Section';
 
 type SkillsProps = {};
 
+
+const StrongSkills = [
+  {
+    name: "Angular",
+    icon: '/skill-icons/angular.svg'
+  },
+  {
+    name: "React",
+    icon: "/skill-icons/react.svg"
+  },
+  {
+    name: "Nodejs",
+    icon: "/skill-icons/node-js.svg"
+  },
+  {
+    name: "Tailwind",
+    icon: "/skill-icons/tailwind.svg"
+  },
+  {
+    name: "HTML",
+    icon: "/skill-icons/html5.svg"
+  },
+  {
+    name: "CSS",
+    icon: "/skill-icons/css3.svg"
+  },
+  {
+    name: "Javascript",
+    icon: "/skill-icons/js.svg"
+  },
+  {
+    name: "Typescript",
+    icon: "/skill-icons/typescript.svg"
+  },
+]
+
 const Skills: React.FC<SkillsProps> = () => {
   return (
     <Section title="Technical Skills">
-      <div className="gap-4 grid sm:grid-cols-3">
-        <div>
+      <div className="flex flex-wrap justify-center gap-6">
+        {/* <div>
           <h3 className="mb-4 font-bold text-xl text-center">Languages</h3>
           <div className="flex flex-wrap gap-4 bg-[#323443] shadow-md p-4 rounded-md">
             <div>
@@ -481,7 +517,15 @@ const Skills: React.FC<SkillsProps> = () => {
               </svg>
             </div>
           </div>
-        </div>
+        </div> */}
+
+        {
+          StrongSkills.map((x, index) => (<div key={index} className='flex flex-col justify-center items-center gap-2 bg-[#323443] p-4 rounded w-28 h-28'>
+            <img src={x.icon} alt={x.name} className='w-16 h-16' />
+            <p className='font-medium text-sm'>{x.name}</p>
+          </div>))
+        }
+
       </div>
     </Section>
   );
