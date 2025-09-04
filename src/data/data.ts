@@ -6,7 +6,7 @@ export const APP_DATA = {
     summary:
       "With 3 years of hands-on experience as a front-end developer, I specialize in building clean, intuitive, and scalable interfaces that drive user engagement. I take pride in transforming complex requirements into seamless digital experiences.",
     role: "Frontend Developer",
-    email: "khai.fordev@gmail.com",
+    email: "nakhai.fw@gmail.com",
     phone: "0945757051",
     address: "Can Tho City, Vietnam",
     linkedin: "https://www.linkedin.com/in/nakhai9/",
