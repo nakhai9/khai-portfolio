@@ -4,9 +4,12 @@ import { APP_DATA } from '../../data/data';
 type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = () => {
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  }
   return (
     <div className="flex items-center mt-10 border-slate-600 border-t h-12 font-medium">
-      <p>&copy; {APP_DATA.me.name} 2025</p>
+      <p>&copy; {APP_DATA.me.name} {getCurrentYear()}. All rights reserved.</p>
     </div>
   );
 };

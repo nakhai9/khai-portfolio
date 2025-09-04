@@ -1,7 +1,7 @@
-import "./App.css";
+import './App.css';
 
-import { ArrowUp } from "lucide-react";
-import { ToastContainer } from "react-toastify";
+import { ArrowUp } from 'lucide-react';
+import { ToastContainer } from 'react-toastify';
 
 import {
   AboutMe,
@@ -10,9 +10,9 @@ import {
   Intro,
   SideProjects,
   Skills,
-} from "./components";
-import { Footer } from "./components/ui";
-import { APP_DATA } from "./data/data";
+} from './components';
+import { Footer } from './components/ui';
+import { APP_DATA } from './data/data';
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
       <ToastContainer hideProgressBar={true} />
       <button
         type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="right-6 bottom-6 z-[50] fixed bg-amber-500 p-2 rounded-full text-white cursor-pointer"
       >
         <ArrowUp />
