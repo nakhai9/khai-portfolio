@@ -36,9 +36,12 @@ const Intro: FC<IntroProps> = () => {
         <p className="md:text-xl text-center">{APP_DATA.me.summary}</p>
 
         <div className="flex justify-center gap-4">
-          <button className="flex items-center gap-2 bg-[var(--hunt-3)] hover:bg-[var(--hunt-6)] px-2 md:px-6 py-2 rounded-md overflow-hidden font-bold text-white text-sm cursor-pointer">
+          <a
+            href="#home"
+            className="flex items-center gap-2 bg-[var(--hunt-3)] hover:bg-[var(--hunt-6)] px-2 md:px-6 py-2 rounded-md overflow-hidden font-bold text-white text-sm cursor-pointer"
+          >
             <User size={16} /> <span>Get in touch</span>
-          </button>
+          </a>
           <button
             onClick={() => downloadResumeFile("/KhaiNguyen.pdf")}
             type="button"
