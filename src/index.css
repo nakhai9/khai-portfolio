@@ -1,16 +1,33 @@
 @import "tailwindcss";
 
 body {
-  background-color: var(--background-primary);
-  color: var(--text-primary);
+  background: var(--hunt-1);
+  color: var(--hunt-4);
   font-family: "DM Sans";
   font-optical-sizing: auto;
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* https://colorhunt.co/palettes/gold */
 :root {
-  --background-primary: #0a0119;
-  --text-primary: #e2e8f0;
   --font-primary: "DM Sans";
-  --color-primary: #fe9a00;
+
+  /* Background and sub  */
+  --hunt-1: #1b1a17;
+  --hunt-2: #4a403a;
+
+  /* Heading and text */
+  --hunt-3: #f2921d;
+  --hunt-4: #e6d5b8;
+  --hunt-7: #faf8f1;
+
+  /* Button Icon Hover */
+  --hunt-5: #2b2b28;
+
+  /* Button hover */
+  --hunt-6: #f0a500;
 }

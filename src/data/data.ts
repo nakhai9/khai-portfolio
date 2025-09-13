@@ -1,10 +1,19 @@
+import {
+  ArrowUp,
+  Code,
+  Home,
+  MessageCircleMore,
+  SwatchBook,
+  User,
+} from "lucide-react";
+
 export const APP_DATA = {
   me: {
     name: "Khai Nguyen",
     avatar:
       "https://firebasestorage.googleapis.com/v0/b/firestore-project-6ae19.appspot.com/o/full-resume.png?alt=media&token=031a8c1f-c7d2-49a2-bf2b-ed67a296ff3f",
     summary:
-      "With 3 years of hands-on experience as a front-end developer, I specialize in building clean, intuitive, and scalable interfaces that drive user engagement. I take pride in transforming complex requirements into seamless digital experiences.",
+      "A Frontend Developer with over 2 years of experience, working with TypeScript and JavaScript. Technical expertise covers modern frameworks and libraries, including Angular, React.js, and Next.js. Focused on building clean, responsive, and user-friendly web applications. Skilled at problem-solving and collaboration to deliver high-quality products.",
     role: "Frontend Developer",
     email: "nakhai.fw@gmail.com",
     phone: "0945757051",
@@ -15,32 +24,94 @@ export const APP_DATA = {
       "I love coding and constantly explore best practices in my field to make my code more efficient and reliable. What excites me the most is building products that not only perform well but also bring a safe and enjoyable experience to users.",
   },
   navLinks: [
+    { id: "home", title: "Home", icon: Home, href: "#home" },
+    { id: "about-me", title: "About me", icon: User, href: "#about-me" },
+    { id: "skills", title: "Skills", icon: Code, href: "#skills" },
+    {
+      id: "experiences",
+      title: "Experiences",
+      icon: SwatchBook,
+      href: "#experiences",
+    },
+    {
+      id: "contact",
+      title: "Contact",
+      icon: MessageCircleMore,
+      href: "#contact",
+    },
     {
       id: "home",
-      title: "Home",
+      title: "Scroll to top",
+      icon: ArrowUp,
+      href: "#home",
+    },
+  ],
+  skills: [
+    {
+      name: "HTML",
+      icon: "/skill-icons/html5.svg",
     },
     {
-      id: "about",
-      title: "About",
+      name: "CSS",
+      icon: "/skill-icons/css3.svg",
     },
-    // {
-    //   id: "education",
-    //   title: "Education",
-    // },
-    // {
-    //   id: "skills",
-    //   title: "Skills",
-    // },
-    // {
-    //   id: "projects",
-    //   title: "Projects",
-    // },
-    // {
-    //   id: "contact",
-    //   title: "Contact Me",
-    // },
+    {
+      name: "Javascript",
+      icon: "/skill-icons/js.svg",
+    },
+    {
+      name: "Typescript",
+      icon: "/skill-icons/typescript.svg",
+    },
+    {
+      name: "Angular",
+      icon: "/skill-icons/angular.svg",
+    },
+    {
+      name: "React",
+      icon: "/skill-icons/react.svg",
+    },
+    {
+      name: "Nodejs",
+      icon: "/skill-icons/node-js.svg",
+    },
+    {
+      name: "Tailwind",
+      icon: "/skill-icons/tailwind.svg",
+    },
+    {
+      name: "Bootstrap",
+      icon: "/skill-icons/bootstrap.svg",
+    },
+    {
+      name: "Next.js",
+      icon: "/skill-icons/Next.js.svg",
+    },
+    {
+      name: "Tortoise Git",
+      icon: "/skill-icons/TortoiseGit.svg",
+    },
+    {
+      name: "Git",
+      icon: "/skill-icons/Git.svg",
+    },
+    {
+      name: "Selenium",
+      icon: "/skill-icons/Selenium.svg",
+    },
+    {
+      name: "MySQL",
+      icon: "/skill-icons/MySQL.svg",
+    },
+    {
+      name: "Nest.js",
+      icon: "/skill-icons/Nest.js.svg",
+    },
+    {
+      name: "Vercel",
+      icon: "/skill-icons/Vercel.svg",
+    },
   ],
-  skills: {},
   projects: [
     {
       name: "QR Code Generate",
@@ -99,7 +170,6 @@ export const APP_DATA = {
         "Developed and maintained basic backend APIs to support frontend team",
         "Took initiative to fix minor backend issues during frontend tasks",
       ],
-      technologies: ["angular", "tailwind", "bootstrap", "typescript"],
     },
   ],
 };

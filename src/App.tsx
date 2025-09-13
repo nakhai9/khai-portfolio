@@ -1,7 +1,6 @@
-import './App.css';
+import "./App.css";
 
-import { ArrowUp } from 'lucide-react';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 import {
   AboutMe,
@@ -10,14 +9,14 @@ import {
   Intro,
   SideProjects,
   Skills,
-} from './components';
-import { Footer } from './components/ui';
-import { APP_DATA } from './data/data';
+} from "./components";
+import { AppBar, Footer } from "./components/ui";
+import { APP_DATA } from "./data/data";
 
 function App() {
   return (
     <div className="relative px-6 w-full">
-      {/* <AppBar navLinks={APP_DATA.navLinks} /> */}
+      <AppBar />
       <main className="relative mx-auto max-w-5xl">
         <Intro />
         <div className="flex flex-col gap-10">
@@ -30,13 +29,6 @@ function App() {
         </div>
       </main>
       <ToastContainer hideProgressBar={true} />
-      <button
-        type="button"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="right-6 bottom-6 z-[50] fixed bg-amber-500 p-2 rounded-full text-white cursor-pointer"
-      >
-        <ArrowUp />
-      </button>
     </div>
   );
 }
