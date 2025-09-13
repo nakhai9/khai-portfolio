@@ -1,6 +1,7 @@
 import {
   ArrowUp,
   Code,
+  FolderCode,
   Home,
   MessageCircleMore,
   SwatchBook,
@@ -32,6 +33,12 @@ export const APP_DATA = {
       title: "Experiences",
       icon: SwatchBook,
       href: "#experiences",
+    },
+    {
+      id: "projects",
+      title: "Projects",
+      icon: FolderCode,
+      href: "#projects",
     },
     {
       id: "contact",
