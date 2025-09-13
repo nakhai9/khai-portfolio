@@ -14,8 +14,8 @@ export const APP_DATA = {
     avatar:
       "https://firebasestorage.googleapis.com/v0/b/firestore-project-6ae19.appspot.com/o/full-resume.png?alt=media&token=031a8c1f-c7d2-49a2-bf2b-ed67a296ff3f",
     summary:
-      "A Frontend Developer with over 2 years of experience, working with TypeScript and JavaScript. Technical expertise covers modern frameworks and libraries, including Angular, React.js, and Next.js. Focused on building clean, responsive, and user-friendly web applications. Skilled at problem-solving and collaboration to deliver high-quality products.",
-    role: "Frontend Developer",
+      "A Website Developer with over 2 years of experience, working with TypeScript and JavaScript. Technical expertise covers modern frameworks and libraries, including Angular, React.js, and Next.js. Focused on building clean, responsive, and user-friendly web applications. Skilled at problem-solving and collaboration to deliver high-quality products.",
+    role: "Website Developer",
     email: "nakhai.fw@gmail.com",
     phone: "0945757051",
     address: "Can Tho City, Vietnam",
