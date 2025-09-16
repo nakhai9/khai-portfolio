@@ -137,14 +137,6 @@ export const APP_DATA = {
       launchUrl: "https://khai-portfolio.vercel.app/",
     },
     {
-      name: "Expense Tracker App",
-      technologies: ["Nextjs", "Firebase", "Tailwind", "MUI"],
-      description:
-        "A personal finance management app designed to track and organize my income and expenses",
-      imageUrl: "/images/wallet.png",
-      launchUrl: "https://vitietkiem-ui.vercel.app/",
-    },
-    {
       name: "Bill Split",
       technologies: ["Gemini AI", "Next.js", "TypeScript", "Tailwind"],
       description:
