@@ -144,6 +144,14 @@ export const APP_DATA = {
       imageUrl: "/images/bill-split.png",
       launchUrl: "https://billsplit-fake.vercel.app/",
     },
+    {
+      name: "Sothuchi App (building)",
+      technologies: ["Nest.js", "Next.js", "TypeScript", "Tailwind", "Gemini AI"],
+      description:
+        "of what you're spending, earning and saving. By keeping track of your expenses you know exactly where your money's going to. This way you can make sure that your money is used wisely.",
+      imageUrl: "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
+      launchUrl: "https://sothuchi-app.vercel.app",
+    },
   ],
   emailServiceConfig: {
     serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
