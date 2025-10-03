@@ -145,7 +145,7 @@ export const APP_DATA = {
       launchUrl: "https://billsplit-fake.vercel.app/",
     },
     {
-      name: "Sothuchi App (building)",
+      name: "Sothuchi App",
       technologies: ["Nest.js", "Next.js", "TypeScript", "Tailwind", "Gemini AI"],
       description:
         "of what you're spending, earning and saving. By keeping track of your expenses you know exactly where your money's going to. This way you can make sure that your money is used wisely.",
