@@ -160,10 +160,22 @@ export const APP_DATA = {
   },
   experiences: [
     {
+      companyName: "Transform Tech (remote)",
+      role: "Frontend Developer",
+      from: "October 2025",
+      to: "present",
+      duties: [
+        "Guide and support team members throughout the feature development process",
+        "Build a new shared UI component library for the entire project",
+        "Review, optimize, and standardize team members’ code to ensure quality and performance",
+        "Collaborate with the Backend team to integrate APIs into the UI and handle data on the screens"
+      ],
+    },
+    {
       companyName: "Simplify Dalat - Can Tho Campus",
       role: "Software Developer",
       from: "August 2022",
-      to: "present",
+      to: "October 2025",
       duties: [
         "Developed and maintained responsive, user-friendly Uis based on client requirements",
         "Migrated legacy UI use standalone component to improve performance",
