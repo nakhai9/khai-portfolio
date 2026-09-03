@@ -1,16 +1,22 @@
 import "./index.css";
+import "./i18n";
 
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 
-import App from "./App.tsx";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
+import App from "./App";
+import { theme } from "./theme";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Suspense fallback={null}>
+        <App />
+      </Suspense>
+    </ThemeProvider>
   </StrictMode>
 );

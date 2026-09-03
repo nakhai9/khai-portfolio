@@ -1,167 +1,209 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
 import { useState } from "react";
+import type { ChangeEvent, FC, FormEvent } from "react";
 
 import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 
 import emailjs from "@emailjs/browser";
+import { Box, Link, Stack, Typography } from "@mui/material";
 
 import { APP_DATA } from "../data/data";
+import {
+  BaseButton,
+  BaseSection,
+  BaseSurface,
+  BaseTextField,
+} from "../shared/components";
 import { isEmail } from "../utils/common";
-import Section from "./ui/Section";
-
-type ContactMeProps = {
-  //   TODO
-};
 
 type ContactMeForm = {
   name: string;
-  message: string;
   email: string;
+  message: string;
 };
 
-const ContactMe: React.FC<ContactMeProps> = () => {
-  const [formData, setFormData] = useState<ContactMeForm>({
-    name: "",
-    message: "",
-    email: "",
-  });
+const EMPTY_FORM: ContactMeForm = { name: "", email: "", message: "" };
+
+/** Contact form (EmailJS) plus the static contact details. */
+const ContactMe: FC = () => {
+  const { t } = useTranslation();
+  const [formData, setFormData] = useState<ContactMeForm>(EMPTY_FORM);
+  const [isSending, setIsSending] = useState(false);
+  const { me, emailServiceConfig } = APP_DATA;
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    const { name, value } = event.target;
+    setFormData((previous) => ({ ...previous, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const { name, email, message } = formData;
+
+    if (!name || !email || !message) {
+      toast.error(t("contact.errors.required"));
+      return;
+    }
+
+    if (!isEmail(email)) {
+      toast.error(t("contact.errors.invalidEmail"));
+      return;
+    }
 
     try {
-      const { name, email, message } = formData;
-      if (!name || !message || !email) {
-        toast.error("Name, Email or Message is required", {
-          position: "top-right",
-        });
-        return;
-      }
-
-      if (!isEmail(email)) {
-        toast.error("Invalid email", {
-          position: "top-right",
-        });
-        return;
-      }
-
-      const template_params = {
-        ...formData,
-      };
-
-      const response = await emailjs.send(
-        APP_DATA.emailServiceConfig.serviceId || "",
-        APP_DATA.emailServiceConfig.templateId || "",
-        template_params,
-        APP_DATA.emailServiceConfig.userId || ""
+      setIsSending(true);
+      await emailjs.send(
+        emailServiceConfig.serviceId ?? "",
+        emailServiceConfig.templateId ?? "",
+        { ...formData },
+        emailServiceConfig.userId ?? ""
       );
 
-      if (response.text === "OK") {
-        setFormData({
-          name: "",
-          message: "",
-          email: "",
-        });
-      }
-
-      toast.success(
-        "Your message has been successfully sent. I’ll get back to you as soon as possible",
-        {
-          position: "top-right",
-        }
-      );
+      setFormData(EMPTY_FORM);
+      toast.success(t("contact.success"));
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      toast.error(t("contact.errors.failed"));
+    } finally {
+      setIsSending(false);
     }
   };
 
+  const contactItems = [
+    {
+      id: "email",
+      icon: <Mail size={20} />,
+      value: me.email,
+      href: `mailto:${me.email}`,
+    },
+    { id: "phone", icon: <Phone size={20} />, value: me.phone },
+    { id: "address", icon: <MapPin size={20} />, value: me.address },
+    {
+      id: "linkedin",
+      icon: <Linkedin size={20} />,
+      value: me.linkedinLabel,
+      href: me.linkedin,
+      external: true,
+    },
+  ];
+
   return (
-    <Section id="contact" title="Contact Me">
-      <div className="grid md:grid-cols-2 bg-[var(--hunt-2)] mx-auto rounded-md">
-        <div className="p-5">
-          <div className="mb-3 font-medium text-2xl text-center">
-            Send Me a Message
-          </div>
-          <form className="flex flex-col flex-1 gap-4" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="" className="block mb-1 font-medium">
-                Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                className="bg-transparent p-2 border-[var(--hunt-4)] border-2 focus:border-[var(--hunt-3)] rounded focus:outline-none w-full"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="" className="block mb-1 font-medium">
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="email"
-                value={formData.email}
-                className="bg-transparent p-2 border-[var(--hunt-4)] border-2 focus:border-[var(--hunt-3)] rounded focus:outline-none w-full"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="" className="block mb-1 font-medium">
-                Message <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                className="bg-transparent p-2 border-[var(--hunt-4)] border-2 focus:border-[var(--hunt-3)] rounded focus:outline-none w-full"
-                onChange={handleChange}
-              ></textarea>
-            </div>
-            <div className="flex justify-center items-center">
-              <button
-                type="submit"
-                className="flex justify-center items-center gap-2 bg-[var(--hunt-3)] hover:bg-[var(--hunt-6)] px-3 py-2 rounded-md w-full font-medium text-white cursor-pointer"
-              >
-                SEND ME YOUR MESSAGE <Send size={18} />
-              </button>
-            </div>
-          </form>
-        </div>
-        <div className="p-5">
-          <div className="mb-3 font-medium text-2xl text-center">
-            Contact Information
-          </div>
-          <div className="gap-4 grid grid-cols-2">
-            <div className="flex flex-col justify-center items-center gap-2 bg-[var(--hunt-1)] p-3 rounded-md text-sm">
-              <Mail className="" />{" "}
-              <a href={`mailto:${APP_DATA.me.email}`}>{APP_DATA.me.email}</a>
-            </div>
-            <div className="flex flex-col justify-center items-center gap-2 bg-[var(--hunt-1)] p-3 rounded-md text-sm">
-              <Phone /> {APP_DATA.me.phone}
-            </div>
-            <div className="flex flex-col justify-center items-center gap-2 bg-[var(--hunt-1)] p-3 rounded-md text-sm">
-              <MapPin /> {APP_DATA.me.address}
-            </div>
-            <div className="flex flex-col justify-center items-center gap-2 bg-[var(--hunt-1)] p-3 rounded-md text-sm">
-              <Linkedin />
-              <a href={APP_DATA.me.linkedin}>nakhai9</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Section>
+    <BaseSection id="contact" title={t("contact.title")}>
+      <Box
+        sx={{
+          display: "grid",
+          gap: 3,
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          alignItems: "stretch",
+        }}
+      >
+        <BaseSurface sx={{ p: { xs: 3, md: 4 } }}>
+          <Stack
+            component="form"
+            spacing={2.5}
+            onSubmit={handleSubmit}
+            noValidate
+          >
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              {t("contact.formTitle")}
+            </Typography>
+
+            <BaseTextField
+              required
+              name="name"
+              label={t("contact.fields.name")}
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <BaseTextField
+              required
+              name="email"
+              type="email"
+              label={t("contact.fields.email")}
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <BaseTextField
+              required
+              multiline
+              minRows={4}
+              name="message"
+              label={t("contact.fields.message")}
+              value={formData.message}
+              onChange={handleChange}
+            />
+
+            <BaseButton
+              type="submit"
+              disabled={isSending}
+              startIcon={<Send size={18} />}
+            >
+              {isSending ? t("contact.sending") : t("contact.submit")}
+            </BaseButton>
+          </Stack>
+        </BaseSurface>
+
+        <BaseSurface sx={{ p: { xs: 3, md: 4 } }}>
+          <Stack spacing={2.5}>
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              {t("contact.infoTitle")}
+            </Typography>
+
+            <Box
+              sx={{
+                display: "grid",
+                gap: 2,
+                gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)" },
+              }}
+            >
+              {contactItems.map((item) => (
+                <Stack
+                  key={item.id}
+                  spacing={1}
+                  sx={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                    p: 2,
+                    minHeight: 104,
+                    borderRadius: 2,
+                    textAlign: "center",
+                    color: "primary.main",
+                    backgroundColor: "background.default",
+                    border: "1px solid",
+                    borderColor: "divider",
+                  }}
+                >
+                  {item.icon}
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      variant="body2"
+                      sx={{ color: "text.primary", wordBreak: "break-word" }}
+                      {...(item.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : null)}
+                    >
+                      {item.value}
+                    </Link>
+                  ) : (
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "text.primary", wordBreak: "break-word" }}
+                    >
+                      {item.value}
+                    </Typography>
+                  )}
+                </Stack>
+              ))}
+            </Box>
+          </Stack>
+        </BaseSurface>
+      </Box>
+    </BaseSection>
   );
 };
 

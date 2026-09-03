@@ -1,36 +1,47 @@
-import "./App.css";
+import type { FC } from "react";
 
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { Box, Container, Stack } from "@mui/material";
 
 import {
   AboutMe,
+  AppBar,
   ContactMe,
   Experiences,
+  Footer,
   Intro,
   SideProjects,
   Skills,
 } from "./components";
-import { AppBar, Footer } from "./components/ui";
 import { APP_DATA } from "./data/data";
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="relative px-6 w-full">
+    <Box sx={{ position: "relative", width: "100%", minHeight: "100vh" }}>
       <AppBar />
-      <main className="relative mx-auto max-w-5xl">
+
+      <Container maxWidth="lg" component="main" sx={{ px: { xs: 2, md: 3 } }}>
         <Intro />
-        <div className="flex flex-col gap-10">
+        <Stack spacing={{ xs: 4, md: 6 }}>
           <AboutMe />
           <Skills />
           <Experiences list={APP_DATA.experiences} />
           <SideProjects projects={APP_DATA.projects} />
           <ContactMe />
           <Footer />
-        </div>
-      </main>
-      <ToastContainer hideProgressBar={true} />
-    </div>
+        </Stack>
+      </Container>
+
+      <ToastContainer
+        position="top-right"
+        hideProgressBar
+        theme="dark"
+        newestOnTop
+      />
+    </Box>
   );
-}
+};
 
 export default App;
