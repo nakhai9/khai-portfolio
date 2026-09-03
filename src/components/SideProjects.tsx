@@ -1,25 +1,47 @@
-import { Card } from "./ui";
-import Section from "./ui/Section";
+import type { FC } from "react";
 
-type SideProjectsProps = {
-  projects: Array<{
-    name: string;
-    description: string;
-    imageUrl?: string;
-    technologies: string[];
-    launchUrl?: string;
-  }>;
+import { useTranslation } from "react-i18next";
+
+import { Box } from "@mui/material";
+
+import type { Project } from "../data/data";
+import { BaseProjectCard, BaseSection } from "../shared/components";
+
+export type SideProjectsProps = {
+  projects: Project[];
 };
-const SideProjects: React.FC<SideProjectsProps> = ({ projects }) => {
+
+/** Project showcase grid. */
+const SideProjects: FC<SideProjectsProps> = ({ projects }) => {
+  const { t } = useTranslation();
+
   return (
-    <Section id="projects" title="Projects I've Built">
-      <div className="gap-5 grid sm:grid-cols-2 md:grid-cols-3">
-        {projects.length > 0 &&
-          projects.map((project, index) => (
-            <Card project={project} key={index} />
-          ))}
-      </div>
-    </Section>
+    <BaseSection id="projects" title={t("projects.title")}>
+      <Box
+        sx={{
+          display: "grid",
+          gap: 3,
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+          },
+        }}
+      >
+        {projects.map((project) => (
+          <BaseProjectCard
+            key={project.id}
+            name={project.name}
+            description={t(`projects.items.${project.id}.description`)}
+            technologies={project.technologies}
+            imageUrl={project.imageUrl}
+            imageAlt={t("projects.imageAlt", { name: project.name })}
+            launchUrl={project.launchUrl}
+            launchLabel={t("projects.liveDemo")}
+          />
+        ))}
+      </Box>
+    </BaseSection>
   );
 };
 

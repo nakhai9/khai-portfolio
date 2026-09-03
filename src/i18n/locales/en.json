@@ -1,0 +1,149 @@
+{
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "vi": "Vietnamese"
+  },
+  "nav": {
+    "home": "Home",
+    "aboutMe": "About me",
+    "skills": "Skills",
+    "experiences": "Experiences",
+    "projects": "Projects",
+    "contact": "Contact",
+    "scrollToTop": "Scroll to top"
+  },
+  "intro": {
+    "role": "Frontend Developer",
+    "greeting": "Hi, I'm",
+    "summary": "A Frontend Developer with over 5 years of experience building web and desktop applications with TypeScript, React.js, Angular and Next.js. Focused on clean, responsive and maintainable interfaces, and on shipping products that feel good to use.",
+    "getInTouch": "Get in touch",
+    "downloadCv": "Download CV",
+    "socials": {
+      "github": "GitHub profile",
+      "linkedin": "LinkedIn profile",
+      "email": "Send an email"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "avatarAlt": "Portrait of Khai Nguyen",
+    "description": "I love coding and constantly explore best practices in my field to make my code more efficient and reliable. What excites me the most is building products that not only perform well but also bring a safe and enjoyable experience to users.",
+    "stats": {
+      "years": "Years of experience",
+      "companies": "Companies",
+      "technologies": "Technologies"
+    }
+  },
+  "skills": {
+    "title": "Technical Skills"
+  },
+  "experiences": {
+    "title": "Experiences",
+    "present": "Present",
+    "teamSize": "Team of {{count}}",
+    "workplace": {
+      "onsite": "Onsite",
+      "remote": "Remote"
+    },
+    "items": {
+      "fpt-is": {
+        "role": "Fullstack Developer (frontend-focused)",
+        "duties": [
+          "Contributed to architecture design, technical estimation, implementation, and code reviews.",
+          "Built 3 screens of the desktop application.",
+          "Built 5 screens of the web application.",
+          "Responsible for developing 3 of the system's 8 main modules.",
+          "Handled the responsive layout of the desktop app.",
+          "Collaborated with team members to implement features, fix issues, and deliver the graduation project."
+        ]
+      },
+      "transform-tech": {
+        "role": "Frontend Developer",
+        "duties": [
+          "Developed the user interface for the \"Shared Data Storage\" module.",
+          "Set up and developed the frontend architecture from the ground up, including a shared UI component system to improve maintainability and consistency.",
+          "Broke down tasks and assigned them effectively to the team.",
+          "Built 5 custom plugins for CKEditor 5 to support advanced document editing features.",
+          "Collaborated with backend teams to integrate APIs and manage complex data flows in the UI.",
+          "Reviewed and optimized code to improve overall code quality and maintainability.",
+          "Mentored and supported team members throughout feature development cycles.",
+          "Developed multiple modules related to document management systems."
+        ]
+      },
+      "simplify-dalat": {
+        "role": "Fullstack Developer",
+        "duties": [
+          "Migrated all UI components from a legacy PHP-based project to a modern Angular application, improving scalability and maintainability.",
+          "Refactored the application using Angular standalone components (v17).",
+          "Optimized application performance, reducing redundant code and improving load time.",
+          "Developed and integrated APIs between frontend and backend systems using .NET.",
+          "Built 40+ reusable UI components, reducing development time across multiple features.",
+          "Wrote automation tests using Selenium WebDriver to improve testing efficiency.",
+          "Built an internal CMS system for over 1000+ users.",
+          "Maintained and enhanced system features based on client feedback.",
+          "Created user guides and documentation for end users."
+        ]
+      }
+    },
+    "techStack": "Tech stack",
+    "aiTools": "AI tools",
+    "showMore": "Show all responsibilities",
+    "showLess": "Show less",
+    "responsibilities": "Key responsibilities",
+    "visitWebsite": "Visit {{company}}'s website"
+  },
+  "education": {
+    "title": "Education",
+    "items": {
+      "can-tho-university": {
+        "school": "Can Tho University",
+        "degree": "Bachelor of Computer Science"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects I've Built",
+    "liveDemo": "Live demo",
+    "imageAlt": "Screenshot of {{name}}",
+    "items": {
+      "centrixg": {
+        "description": "A game-selling website built as a freelance project, shipped as both a web interface and a packaged Windows desktop app, with SePay integrated for online payments."
+      },
+      "qr-code": {
+        "description": "A web application that allows users to generate QR codes for URLs, text, and other data types."
+      },
+      "portfolio": {
+        "description": "A personal portfolio website to showcase my projects and technical skills."
+      },
+      "bill-split": {
+        "description": "A web application that makes splitting bills among friends and family effortless, with AI-powered receipt scanning."
+      },
+      "sothuchi": {
+        "description": "A personal finance app that keeps track of what you spend, earn and save, so you always know exactly where your money is going."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "formTitle": "Send me a message",
+    "infoTitle": "Contact information",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "submit": "Send your message",
+    "sending": "Sending...",
+    "errors": {
+      "required": "Name, email and message are required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "failed": "Something went wrong. Please try again later."
+    },
+    "success": "Your message has been sent. I'll get back to you as soon as possible."
+  },
+  "footer": {
+    "rights": "© {{name}} {{year}}. All rights reserved.",
+    "builtWith": "Built with React, TypeScript and MUI."
+  }
+}

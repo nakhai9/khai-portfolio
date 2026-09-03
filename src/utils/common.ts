@@ -3,10 +3,12 @@ export const isEmail = (text: string): boolean => {
   return emailRegex.test(text);
 };
 
-export const downloadResumeFile = (path: string) => {
+/** Triggers a browser download for a bundled asset URL. */
+export const downloadFile = (url: string, fileName: string) => {
   const link = document.createElement("a");
-  link.href = path;
-  link.download = "KhaiNguyen.pdf";
+  link.href = url;
+  link.download = fileName;
+  link.rel = "noopener";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -1,0 +1,149 @@
+{
+  "language": {
+    "label": "Ngôn ngữ",
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "aboutMe": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "experiences": "Kinh nghiệm",
+    "projects": "Dự án",
+    "contact": "Liên hệ",
+    "scrollToTop": "Lên đầu trang"
+  },
+  "intro": {
+    "role": "Lập trình viên Frontend",
+    "greeting": "Xin chào, tôi là",
+    "summary": "Lập trình viên Frontend với hơn 5 năm kinh nghiệm xây dựng ứng dụng web và desktop bằng TypeScript, React.js, Angular và Next.js. Tập trung vào giao diện gọn gàng, responsive, dễ bảo trì và mang lại trải nghiệm tốt cho người dùng.",
+    "getInTouch": "Liên hệ với tôi",
+    "downloadCv": "Tải CV",
+    "socials": {
+      "github": "Trang GitHub",
+      "linkedin": "Trang LinkedIn",
+      "email": "Gửi email"
+    }
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "avatarAlt": "Ảnh chân dung Khai Nguyen",
+    "description": "Tôi yêu thích lập trình và luôn tìm hiểu các best practice trong lĩnh vực của mình để viết mã hiệu quả và đáng tin cậy hơn. Điều khiến tôi hứng thú nhất là tạo ra sản phẩm không chỉ chạy tốt mà còn mang lại trải nghiệm an toàn, dễ chịu cho người dùng.",
+    "stats": {
+      "years": "Năm kinh nghiệm",
+      "companies": "Công ty",
+      "technologies": "Công nghệ"
+    }
+  },
+  "skills": {
+    "title": "Kỹ năng chuyên môn"
+  },
+  "experiences": {
+    "title": "Kinh nghiệm làm việc",
+    "present": "Hiện tại",
+    "teamSize": "Đội {{count}} người",
+    "workplace": {
+      "onsite": "Tại văn phòng",
+      "remote": "Từ xa"
+    },
+    "items": {
+      "fpt-is": {
+        "role": "Lập trình viên Fullstack (thiên về Frontend)",
+        "duties": [
+          "Tham gia thiết kế kiến trúc, ước lượng kỹ thuật, triển khai và review code.",
+          "Xây dựng 3 màn hình cho ứng dụng desktop.",
+          "Xây dựng 5 màn hình cho ứng dụng web.",
+          "Phụ trách phát triển 3 trong 8 module chính của hệ thống.",
+          "Xử lý bố cục responsive cho ứng dụng desktop.",
+          "Phối hợp cùng đồng đội để phát triển tính năng, xử lý lỗi và hoàn thành đồ án tốt nghiệp."
+        ]
+      },
+      "transform-tech": {
+        "role": "Lập trình viên Frontend",
+        "duties": [
+          "Phát triển giao diện người dùng cho module \"Kho dữ liệu dùng chung\".",
+          "Thiết lập và phát triển kiến trúc frontend từ đầu, bao gồm hệ thống component UI dùng chung giúp tăng khả năng bảo trì và tính nhất quán.",
+          "Phân rã công việc và phân công hiệu quả cho các thành viên trong nhóm.",
+          "Xây dựng 5 plugin tùy chỉnh cho CKEditor 5 để hỗ trợ các tính năng soạn thảo tài liệu nâng cao.",
+          "Phối hợp với đội backend để tích hợp API và xử lý luồng dữ liệu phức tạp trên giao diện.",
+          "Review và tối ưu code nhằm nâng cao chất lượng, khả năng bảo trì của dự án.",
+          "Hướng dẫn và hỗ trợ các thành viên trong suốt quá trình phát triển tính năng.",
+          "Phát triển nhiều module liên quan đến hệ thống quản lý tài liệu."
+        ]
+      },
+      "simplify-dalat": {
+        "role": "Lập trình viên Fullstack",
+        "duties": [
+          "Chuyển đổi toàn bộ component UI từ dự án PHP cũ sang ứng dụng Angular hiện đại, cải thiện khả năng mở rộng và bảo trì.",
+          "Refactor ứng dụng theo mô hình standalone component của Angular (v17).",
+          "Tối ưu hiệu năng ứng dụng, loại bỏ mã dư thừa và cải thiện thời gian tải trang.",
+          "Phát triển và tích hợp API giữa frontend và backend bằng .NET.",
+          "Xây dựng hơn 40 component UI tái sử dụng, rút ngắn thời gian phát triển cho nhiều tính năng.",
+          "Viết kiểm thử tự động bằng Selenium WebDriver để tăng hiệu quả kiểm thử.",
+          "Xây dựng hệ thống CMS nội bộ phục vụ hơn 1000 người dùng.",
+          "Bảo trì và nâng cấp tính năng hệ thống dựa trên phản hồi của khách hàng.",
+          "Viết tài liệu hướng dẫn sử dụng cho người dùng cuối."
+        ]
+      }
+    },
+    "techStack": "Công nghệ",
+    "aiTools": "Công cụ AI",
+    "showMore": "Xem tất cả công việc",
+    "showLess": "Thu gọn",
+    "responsibilities": "Công việc chính",
+    "visitWebsite": "Truy cập website {{company}}"
+  },
+  "education": {
+    "title": "Học vấn",
+    "items": {
+      "can-tho-university": {
+        "school": "Trường Đại học Cần Thơ",
+        "degree": "Cử nhân Khoa học Máy tính"
+      }
+    }
+  },
+  "projects": {
+    "title": "Dự án đã thực hiện",
+    "liveDemo": "Xem demo",
+    "imageAlt": "Ảnh chụp màn hình dự án {{name}}",
+    "items": {
+      "centrixg": {
+        "description": "Website bán game được thực hiện dưới dạng dự án freelance, gồm giao diện web và ứng dụng desktop đóng gói cho Windows, tích hợp SePay để thanh toán trực tuyến."
+      },
+      "qr-code": {
+        "description": "Ứng dụng web cho phép người dùng tạo mã QR cho đường dẫn, văn bản và nhiều loại dữ liệu khác."
+      },
+      "portfolio": {
+        "description": "Website portfolio cá nhân để giới thiệu các dự án và kỹ năng chuyên môn."
+      },
+      "bill-split": {
+        "description": "Ứng dụng web giúp chia hóa đơn với bạn bè và gia đình dễ dàng, có tính năng quét hóa đơn bằng AI."
+      },
+      "sothuchi": {
+        "description": "Ứng dụng quản lý chi tiêu cá nhân giúp theo dõi số tiền chi, thu và tiết kiệm để luôn biết tiền của bạn đang đi đâu."
+      }
+    }
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "formTitle": "Gửi tin nhắn cho tôi",
+    "infoTitle": "Thông tin liên hệ",
+    "fields": {
+      "name": "Họ tên",
+      "email": "Email",
+      "message": "Nội dung"
+    },
+    "submit": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "errors": {
+      "required": "Vui lòng nhập họ tên, email và nội dung.",
+      "invalidEmail": "Email không hợp lệ.",
+      "failed": "Đã có lỗi xảy ra. Vui lòng thử lại sau."
+    },
+    "success": "Tin nhắn của bạn đã được gửi. Tôi sẽ phản hồi trong thời gian sớm nhất."
+  },
+  "footer": {
+    "rights": "© {{name}} {{year}}. Bảo lưu mọi quyền.",
+    "builtWith": "Được xây dựng bằng React, TypeScript và MUI."
+  }
+}

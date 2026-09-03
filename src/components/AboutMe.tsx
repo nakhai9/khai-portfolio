@@ -1,43 +1,74 @@
-import { FC } from "react";
+import type { FC } from "react";
+
+import { useTranslation } from "react-i18next";
+
+import { Box, Stack, Typography } from "@mui/material";
 
 import { APP_DATA } from "../data/data";
-import { Section } from "./ui";
+import { BaseSection, BaseStat } from "../shared/components";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-type AboutMeProps = {};
-const AboutMe: FC<AboutMeProps> = () => {
+/** Avatar, personal blurb and headline numbers. */
+const AboutMe: FC = () => {
+  const { t } = useTranslation();
+  const { me, stats } = APP_DATA;
+
   return (
-    <Section id="about-me" title="About me">
-      <div className="flex md:flex-row flex-col justify-center items-center gap-10">
-        <div className="shadow-amber-500 shadow-lg p-2 border-[var(--hunt-3)] border-1 rounded w-60 h-60 overflow-hidden">
-          <img
-            src={APP_DATA.me.avatar}
-            alt="avatar"
-            className="w-full h-full"
+    <BaseSection id="about-me" title={t("about.title")}>
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        spacing={{ xs: 4, md: 6 }}
+        sx={{ alignItems: "center", justifyContent: "center" }}
+      >
+        <Box
+          sx={{
+            p: 1,
+            flexShrink: 0,
+            width: 240,
+            height: 240,
+            borderRadius: 3,
+            border: "2px solid",
+            borderColor: "primary.main",
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            component="img"
+            src={me.avatar}
+            alt={t("about.avatarAlt")}
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              borderRadius: 2,
+              display: "block",
+            }}
           />
-        </div>
+        </Box>
 
-        <div className="flex flex-col justify-center items-center gap-4">
-          <div className="max-w-96 text-center text-justify">
-            {APP_DATA.me.description}
-          </div>
-          <div className="flex justify-center items-center gap-10">
-            <div className="flex flex-col justify-center items-center gap-1 bg-[var(--hunt-2)] shadow-lg p-4 rounded-md w-24 h-20">
-              <p className="font-bold text-[var(--hunt-3)] text-xl">2+</p>
-              <span className="text-xs">Years</span>
-            </div>
-            <div className="flex flex-col justify-center items-center gap-1 bg-[var(--hunt-2)] shadow-lg p-4 rounded-md w-24 h-20">
-              <p className="font-bold text-[var(--hunt-3)] text-xl">2+</p>
-              <span className="text-xs">Projects</span>
-            </div>
-            <div className="flex flex-col justify-center items-center gap-1 bg-[var(--hunt-2)] shadow-lg p-4 rounded-md w-24 h-20">
-              <p className="font-bold text-[var(--hunt-3)] text-xl">5+</p>
-              <span className="text-xs">Technologies</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Section>
+        <Stack spacing={3} sx={{ alignItems: { xs: "center", md: "flex-start" } }}>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "text.secondary",
+              maxWidth: 520,
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            {t("about.description")}
+          </Typography>
+
+          <Stack direction="row" spacing={2} useFlexGap sx={{ flexWrap: "wrap" }}>
+            <BaseStat value={stats.years} label={t("about.stats.years")} />
+            <BaseStat value={stats.companies} label={t("about.stats.companies")} />
+            <BaseStat
+              value={stats.technologies}
+              label={t("about.stats.technologies")}
+            />
+          </Stack>
+        </Stack>
+      </Stack>
+    </BaseSection>
   );
 };
+
 export default AboutMe;

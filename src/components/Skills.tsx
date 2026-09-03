@@ -1,29 +1,29 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
+import type { FC } from "react";
+
+import { useTranslation } from "react-i18next";
+
+import { Stack } from "@mui/material";
+
 import { APP_DATA } from "../data/data";
-import Section from "./ui/Section";
+import { BaseSection, BaseSkillTile } from "../shared/components";
 
-{
-  /* https://www.figma.com/community/file/1161721251517347938 */
-  // https://techicons.dev/icons/nestjs
-}
+/** Grid of technology tiles. */
+const Skills: FC = () => {
+  const { t } = useTranslation();
 
-type SkillsProps = {};
-
-const Skills: React.FC<SkillsProps> = () => {
   return (
-    <Section id="skills" title="Technical Skills">
-      <div className="flex flex-wrap justify-center gap-6">
-        {APP_DATA.skills.map((x, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center items-center gap-2 bg-[var(--hunt-2)] shadow-lg p-4 rounded w-28 h-28"
-          >
-            <img src={x.icon} alt={x.name} className="w-16 h-16" />
-            <p className="font-medium text-sm">{x.name}</p>
-          </div>
+    <BaseSection id="skills" title={t("skills.title")}>
+      <Stack
+        direction="row"
+        useFlexGap
+        spacing={2.5}
+        sx={{ flexWrap: "wrap", justifyContent: "center" }}
+      >
+        {APP_DATA.skills.map((skill) => (
+          <BaseSkillTile key={skill.name} name={skill.name} icon={skill.icon} />
         ))}
-      </div>
-    </Section>
+      </Stack>
+    </BaseSection>
   );
 };
 

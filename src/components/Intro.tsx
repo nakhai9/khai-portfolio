@@ -1,85 +1,117 @@
-import { FC } from "react";
+import type { FC } from "react";
 
-import {
-  Download,
-  Github,
-  Linkedin,
-  Mail,
-  SquareCode,
-  User,
-} from "lucide-react";
+import { Download, Github, Linkedin, Mail, SquareCode, User } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+import { Box, Stack, Typography } from "@mui/material";
 
 import { APP_DATA } from "../data/data";
-import { downloadResumeFile } from "../utils/common";
+import { BaseButton, BaseIconLink } from "../shared/components";
+import { downloadFile } from "../utils/common";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-type IntroProps = {};
-const Intro: FC<IntroProps> = () => {
+/** Hero section: role badge, name, summary and the primary calls to action. */
+const Intro: FC = () => {
+  const { t } = useTranslation();
+  const { me } = APP_DATA;
+
+  const handleDownloadCv = () => {
+    downloadFile(me.resume, me.resumeFileName);
+  };
+
   return (
-    <div id="home" className="flex items-center mx-auto min-h-screen">
-      <div className="flex flex-col justify-center items-center gap-5 mx-auto md:max-w-4xl">
-        <div className="flex justify-center items-center gap-2 px-6 py-1 border-[var(--hunt-4)] border-2 rounded-full font-semibold">
+    <Box
+      id="home"
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        scrollMarginTop: 0,
+      }}
+    >
+      <Stack spacing={3} sx={{ alignItems: "center", maxWidth: 800, py: 8 }}>
+        <Stack
+          direction="row"
+          spacing={1}
+          sx={{
+            alignItems: "center",
+            px: 2.5,
+            py: 0.75,
+            borderRadius: 999,
+            border: "1px solid",
+            borderColor: "divider",
+            color: "text.secondary",
+          }}
+        >
           <SquareCode size={16} />
-          <span>{APP_DATA.me.role}</span>
-        </div>
+          <Typography variant="body2" sx={{ fontWeight: 600 }}>
+            {t("intro.role")}
+          </Typography>
+        </Stack>
 
-        <div>
-          <h1
-            className="block font-bold text-4xl md:text-6xl text-center"
-            style={{ lineHeight: "unset" }}
-          >
-            Hi, I'm
-            <span className="text-[var(--hunt-3)]"> {APP_DATA.me.name}</span>
-          </h1>
-        </div>
+        <Typography
+          variant="h1"
+          sx={{ fontSize: { xs: 36, md: 60 }, textAlign: "center" }}
+        >
+          {t("intro.greeting")}{" "}
+          <Box component="span" sx={{ color: "primary.main" }}>
+            {me.name}
+          </Box>
+        </Typography>
 
-        <p className="md:text-xl text-center">{APP_DATA.me.summary}</p>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "text.secondary",
+            textAlign: "center",
+            fontSize: { xs: 15, md: 18 },
+          }}
+        >
+          {t("intro.summary")}
+        </Typography>
 
-        <div className="flex justify-center gap-4">
-          <a
-            href="#contact"
-            className="flex items-center gap-2 bg-[var(--hunt-3)] hover:bg-[var(--hunt-6)] px-2 md:px-6 py-2 rounded-md overflow-hidden font-bold text-white text-sm cursor-pointer"
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+          sx={{ width: { xs: "100%", sm: "auto" } }}
+        >
+          <BaseButton href="#contact" startIcon={<User size={18} />}>
+            {t("intro.getInTouch")}
+          </BaseButton>
+          <BaseButton
+            variant="outlined"
+            onClick={handleDownloadCv}
+            startIcon={<Download size={18} />}
           >
-            <User size={16} /> <span>Get in touch</span>
-          </a>
-          <button
-            onClick={() => downloadResumeFile("/KhaiNguyen.pdf")}
-            type="button"
-            className="flex items-center gap-2 bg-transparent hover:bg-[var(--hunt-5)] px-2 md:px-6 py-2 border-[var(--hunt-4)] border-2 rounded-md overflow-hidden font-bold text-sm cursor-pointer"
-          >
-            <Download size={16} />
-            <span>Download Resume</span>
-          </button>
-        </div>
+            {t("intro.downloadCv")}
+          </BaseButton>
+        </Stack>
 
-        <div className="flex justify-center items-center gap-4">
-          <a
-            href={APP_DATA.me.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex justify-center items-center bg-[var(--hunt-2)] hover:bg-[var(--hunt-5)] rounded-full w-12 h-12 hover:scale-105 transition-transform duration-300 cursor-pointer"
+        <Stack direction="row" spacing={1.5}>
+          <BaseIconLink
+            href={me.github}
+            label={t("intro.socials.github")}
+            external
           >
-            <Github />
-          </a>
-          <a
-            href={APP_DATA.me.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex justify-center items-center bg-[var(--hunt-2)] hover:bg-[var(--hunt-5)] rounded-full w-12 h-12 hover:scale-105 transition-transform duration-300 cursor-pointer"
+            <Github size={20} />
+          </BaseIconLink>
+          <BaseIconLink
+            href={me.linkedin}
+            label={t("intro.socials.linkedin")}
+            external
           >
-            <Linkedin />
-          </a>
-          <a
-            href={`mailto:${APP_DATA.me.email}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex justify-center items-center bg-[var(--hunt-2)] hover:bg-[var(--hunt-5)] rounded-full w-12 h-12 hover:scale-105 transition-transform duration-300 cursor-pointer"
+            <Linkedin size={20} />
+          </BaseIconLink>
+          <BaseIconLink
+            href={`mailto:${me.email}`}
+            label={t("intro.socials.email")}
           >
-            <Mail />
-          </a>
-        </div>
-      </div>
-    </div>
+            <Mail size={20} />
+          </BaseIconLink>
+        </Stack>
+      </Stack>
+    </Box>
   );
 };
+
 export default Intro;
