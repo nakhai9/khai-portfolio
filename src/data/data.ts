@@ -221,6 +221,13 @@ export const APP_DATA = {
       imageUrl: "/images/sothuchi.png",
       launchUrl: "https://sothuchi-app.vercel.app",
     },
+    {
+      id: "visited-map",
+      name: "Scrapbook - Capture and share your journey.",
+      technologies: ["React.js", "React Echart", "Vite", "React Facebook Share", "Node.js", "TypeScript", "D3-Geojson", "MUI"],
+      imageUrl: "/images/visited-map.png",
+      launchUrl: "https://visited-map.vercel.app/",
+    },
   ] as Project[],
   emailServiceConfig: {
     serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
