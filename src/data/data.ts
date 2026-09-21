@@ -187,6 +187,14 @@ export const APP_DATA = {
   ],
   projects: [
     {
+      id: "visited-map",
+      name: "Scrapbook",
+      technologies: ["React.js", "React Echart", "Vite", "React Facebook Share", "Node.js", "TypeScript", "D3-Geojson", "MUI"],
+      imageUrl: "/images/visited-map.png",
+      launchUrl: "https://visited-map.vercel.app/",
+    },
+    ,
+    {
       id: "centrixg",
       name: "CentrixG",
       technologies: ["Electron Vite", "React.js", "shadcn/ui", "NestJS", "i18n"],
@@ -220,14 +228,7 @@ export const APP_DATA = {
       technologies: ["Nest.js", "Next.js", "TypeScript", "Gemini AI"],
       imageUrl: "/images/sothuchi.png",
       launchUrl: "https://sothuchi-app.vercel.app",
-    },
-    {
-      id: "visited-map",
-      name: "Scrapbook - Capture and share your journey.",
-      technologies: ["React.js", "React Echart", "Vite", "React Facebook Share", "Node.js", "TypeScript", "D3-Geojson", "MUI"],
-      imageUrl: "/images/visited-map.png",
-      launchUrl: "https://visited-map.vercel.app/",
-    },
+    }
   ] as Project[],
   emailServiceConfig: {
     serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
