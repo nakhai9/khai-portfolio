@@ -189,7 +189,7 @@ export const APP_DATA = {
     {
       id: "visited-map",
       name: "Scrapbook",
-      technologies: ["React.js", "React Echart", "Vite", "React Facebook Share", "Node.js", "TypeScript", "D3-Geojson", "MUI"],
+      technologies: ["React.js", "React Echart", "Vite", "React Facebook Share", "Node.js", "TypeScript", "D3-Geojson", "MUI", "Firebase Auth", "Google Auth"],
       imageUrl: "/images/visited-map.png",
       launchUrl: "https://visited-map.vercel.app/",
     },
