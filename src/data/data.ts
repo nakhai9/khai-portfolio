@@ -187,6 +187,13 @@ export const APP_DATA = {
   ],
   projects: [
     {
+      id: "black-area-game",
+      name: "Black Area - RTS Game",
+      technologies: ["Node.js", "Next.js", "TypeScript", "Claude", "Canvas", "Python"],
+      imageUrl: "/images/black-area.png",
+      launchUrl: "https://black-area.vercel.app/",
+    },
+    {
       id: "visited-map",
       name: "Scrapbook",
       technologies: ["React.js", "React Echart", "Vite", "React Facebook Share", "Node.js", "TypeScript", "D3-Geojson", "MUI", "Firebase Auth", "Google Auth"],
